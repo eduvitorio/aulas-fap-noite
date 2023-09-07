@@ -16,7 +16,7 @@ class ItemPedido{
 
 class Pedido{
     constructor(data, cliente){
-        this.data = data.now();
+        this.data = data.now[];
         this.cliente = cliente;
         this.itensPedido = [];
         this.valor = 0.0;
@@ -38,4 +38,4 @@ var itemCoxinhaStf = new ItemPedido("Coxinha de frango", 5.0, 2);
 pedidoStefano.addItem(itemCoxinhaStf);
 var itemExpressoStf = new ItemPedido("Expresso P", 3.0, 1);
 pedidoStefano.addItem(itemExpressoStf);
-
+console.log(pedidoStefano);
