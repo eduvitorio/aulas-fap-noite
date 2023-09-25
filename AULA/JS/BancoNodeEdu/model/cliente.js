@@ -8,4 +8,7 @@ export class cliente{
         this.telefone = telefone;
         this.end = end;
     }
+
+    toString(){
+        return `Cliente`
 }

@@ -17,22 +17,60 @@ export class Conta{
 // Proximos passos
 
 // depositar da conta
-depositar(valor){
+depositar(valor) {
     this.saldo += valor;
     let trans = new Transacao(TIPOTRANSACAO.creditar, new Date().toLocaleDateString(), valor, null, '+');
     this.transacoes.push(trans);
 }
 
 // sacar da conta
-sacar(valor){
+sacar(valor) {
     if (this.saldo >= valor) {
         this.saldo -= valor;
         let trans = new Transacao(TIPOTRANSACAO.debitar, new Date().toLocaleDateString(), valor, null, '-');
         this.transacoes.push(trans);
-    }   else {
+    } else {
         console.log('saldo insuficiente');
     }
     this.saldo -= valor;
     let trans = new Transacao(TIPOTRANSACAO.debitar, new Date().toLocaleDateString(), valor, null, '-');
     this.transacoes.push(trans);
+}
+
+// transferir da conta
+transferir(valor, contaFav){
+    if(this.saldo >= valor){
+        this.saldo -= valor;
+        let trans = new Transacao(TIPOTRANSACAO.transferir, new Date().toLocaleDateString(),
+    }else {
+        console.error('Erro: SaldoInsuficiente ' + valor + 'maior do que o saldo' + this.saldo + '.');
+    }
+}
+
+// pagar
+
+pagar(valor) {
+    if (this.saldo >= valor) {
+        this.saldo -= valor;
+        let trans = new Transacao(TIPOTRANSACAO.debitar, new Date().toLocaleDateString(), valor, null, '-');
+        this.transacoes.push(trans);
+    } else {
+        console.log('saldo insuficiente');
+    }
+    this.saldo -= valor;
+    let trans = new Transacao(TIPOTRANSACAO.debitar, new Date().toLocaleDateString(), valor, null, '-');
+    this.transacoes.push(trans);
+}
+
+// mostrar saldo da conta
+
+mostrarsaldo() {
+   console.log("Saldo: R$ " + this.saldo);
+}
+
+//toString da conta
+
+//mostrar extrato da conta
+mostrarExtrato(){
+
 }
