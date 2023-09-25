@@ -7,3 +7,8 @@ export class Transacao{
         this.tipoValor = tipoValor;
     }
 }
+
+
+let Transacao = document.getElementsByName("transacao") => {
+    return 
+}
